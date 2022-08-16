@@ -1,0 +1,35 @@
+.product {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+mat-card{
+  img{
+    max-height: 400px;
+    text-align: center;
+  }
+}
+
+mat-card-content{
+  padding: 20px;
+}
+
+
+.product-info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  span{
+    font-weight: 400;
+  }
+}
+
+mat-card-actions{
+  button{
+    margin: 20px;
+  }
+}
+

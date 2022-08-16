@@ -1,0 +1,25 @@
+@import '/src/_variables.scss';
+
+.spinner-container {
+  width: 100%;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+
+  input::placeholder{
+    color: whitesmoke;
+  }
+}
+
+mat-sidenav-container{
+  top: 64px !important;
+}
+
+mat-nav-list{
+  mat-icon{
+    color: $primary;
+    padding: 10px;
+  }
+}

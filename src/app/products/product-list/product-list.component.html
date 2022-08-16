@@ -1,0 +1,36 @@
+<div class="products">
+  <mat-card *ngFor="let product of products" class="product-card mat-elevation-z10">
+    <mat-card-header>
+      <mat-card-title><a [routerLink]="['/products',product.slug]">{{ product.name }}</a></mat-card-title>
+    </mat-card-header>
+
+    <img mat-card-image [src]="product.image === null ?'../../../assets/images/no-image.jpg': product.image.url" alt="product" (error)="handleMissingImage($event)">
+
+    <mat-card-content>
+      <div>
+        <button mat-icon-button color="primary">
+          <mat-icon>thumb_up</mat-icon>
+        </button>
+        <span>{{ product.likes_up_count }}</span>
+        <button mat-icon-button color="warn">
+          <mat-icon>thumb_down</mat-icon>
+        </button>
+        <span>{{ product.likes_down_count }}</span>
+      </div>
+      <div class="product-info">
+        <p>Price: <span>{{ product.master.price | currency }}</span></p>
+        <p>Stock: <span>{{ product.master.stock }}</span></p>
+      </div>
+      <p><span>{{ product.category.name }}</span></p>
+    </mat-card-content>
+
+    <mat-card-actions class="product-actions">
+      <button mat-mini-fab color="primary" [routerLink]="['/products']">
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent" [routerLink]="['/products']" *ngIf="product.master.stock">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

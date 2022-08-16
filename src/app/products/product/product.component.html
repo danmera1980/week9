@@ -1,0 +1,38 @@
+<div class="product" *ngIf="(product$ | async) as product">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        {{ product.name }}
+      </mat-card-title>
+    </mat-card-header>
+    <img [src]="product.image.url" (error)="handleMissingImage($event)">
+    <mat-card-content>
+      <div class="likes">
+        <button mat-icon-button color="primary">
+          <mat-icon>thumb_up</mat-icon>
+        </button>
+        <span>{{ product.likes_up_count }} </span>
+        <button mat-icon-button color="warn">
+          <mat-icon>thumb_down</mat-icon>
+        </button>
+        <span>{{ product.likes_down_count }}</span>
+      </div>
+      <h3>Description</h3>
+      <p>{{ product.description }}</p>
+
+      <div class="product-info">
+        <p>Price: <span>{{ product.master.price | currency }}</span></p>
+        <p>Stock: <span>{{ product.master.stock }}</span></p>
+      </div>
+
+      <h3>Category</h3>
+      <p><span>{{ product.category.name }}</span></p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-mini-fab color="accent" [routerLink]="['/products']" *ngIf="product.master.stock">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

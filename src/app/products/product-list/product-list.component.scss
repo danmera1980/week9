@@ -1,0 +1,47 @@
+@import '/src/_variables.scss';
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  margin: 20px 10px;
+  padding: 20px;
+  width: 200px;
+}
+
+.product-actions {
+  text-align: center;
+}
+
+.product-actions button{
+  margin-right: 10px;
+}
+
+.product-info{
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+  span{
+    font-weight: 400;
+  }
+}
+
+mat-card-title{
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $primary;
+
+  a, a:visited{
+    color: $primary;
+    text-decoration: none;
+  }
+
+  a:hover{
+    color: $primary-variant;
+  }
+}
